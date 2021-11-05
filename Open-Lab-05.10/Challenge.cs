@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+
 
 namespace Open_Lab_05._10
 {
@@ -6,7 +8,20 @@ namespace Open_Lab_05._10
     {
         public int MysteryFunc(int num)
         {
-            throw new NotImplementedException();
+            int output = 0;
+
+            foreach (char number in num.ToString())
+            {
+                if (output == 0)
+                {
+                    output = Int32.Parse(number.ToString());
+                }
+                else
+                {
+                    output *= Int32.Parse(number.ToString());
+                }
+            }
+            return output;
         }
     }
 }
